@@ -19,11 +19,10 @@ class Book
     protected string $author;
     private string $price;
 
-    private function __construct(string $title, string $author, string $price)
+    private function __construct(string $title, string $author)
     {
         $this->title = $title;
         $this->author = $author;
-        $this->price = $price;
     }
 
     public function getTitle(): string
@@ -56,8 +55,8 @@ class Book
         $this->price = $price;
     }
 
-    public static function makeBook(string $title, string $author, int $price) : self
+    public static function makeBook(string $title, string $author) : self
     {
-        return new self($title, $author, $price);
+        return new self($title, $author);
     }
 }
