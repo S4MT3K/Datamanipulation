@@ -68,7 +68,6 @@ class Artikel{
 //id 1 = Sam
 //id 2 = Olesea
 //id 3 = Unbekannt
-$isMutable = true;
 
 $banana = new Artikel(1, "Banana");
 $apfel = new Artikel(2, "Apfel");
