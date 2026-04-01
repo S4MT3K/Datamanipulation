@@ -55,7 +55,8 @@ class Book
         $this->price = $price;
     }
 
-    public static function makeBook(string $title, string $author) : self
+    public static function makeBook(string $title, string $author) : self // Wrapper als Statische Methode der den privatisierten Constructor aufruft und die
+                                                                            // variablen übergibt damit das Objekt erzeugt werden kann.
     {
         return new self($title, $author);
     }

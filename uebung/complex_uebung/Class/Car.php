@@ -44,7 +44,8 @@ class Car
     {
         $this->year = $year;
     }
-    public static function makeCar(string $brand, string $model, int $year) : self
+    public static function makeCar(string $brand, string $model, int $year) : self// Wrapper als Statische Methode der den privatisierten Constructor aufruft und die
+                                                                                    // variablen übergibt damit das Objekt erzeugt werden kann.
     {
         return new self($brand, $model, $year);
     }

@@ -21,11 +21,15 @@ class Person
     public string $name;
     protected int $age;
     private string $email;
-    private function __construct(string $name, int $age, string $email)
+//    public function __construct(string $name, int $age, string $email) //Auskommentiert, um zu zeigen, wie man Objekte noch bauen kann (zu sehen in complex_uebung.php
+//    {
+//        $this->name = $name;
+//        $this->age = $age;
+//        $this->email = $email;
+//    }
+    public function setname(string $name)
     {
         $this->name = $name;
-        $this->age = $age;
-        $this->email = $email;
     }
     public function getAge(): int
     {
@@ -43,9 +47,18 @@ class Person
     {
         $this->email = $email;
     }
-    //Klassenwrapper für New Person
-    public static function makePerson(string $name, int $age, string $email) : self
+    public function setSetters($age, $email, $name) //öffentliche methode, die ein Objekt, welches OHNE Konstruktor und somit OHNE initialisierte Attribute/properties/member erstellt wurde
+                                                    // anspricht, und ihre attribute mit übergebenen parametern füllt
     {
-        return new self($name, $age, $email);
+        $this->setAge($age);
+        $this->setEmail($email);
+        $this->setname($name);
     }
+
+    //Klassenwrapper für New Person
+//    public static function makePerson(string $name, int $age, string $email) : self //Auskommentiert, um zu zeigen, wie man Objekte noch bauen kann (zu sehen in complex_uebung.php
+//    {
+//        return new self($name, $age, $email);
+//    }
+
 }
